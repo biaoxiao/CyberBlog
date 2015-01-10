@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Login ";
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@Styles.Render("~/Content/validator-css")
+@Scripts.Render("~/bundles/bootstrapvalidator")
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form id="login-form" role="form" method="post" class="form-horizontal" action="@Url.Action("Login","Admin")" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+					  data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+					  data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="UserName">User Name</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="UserName" name="UserName" placeholder="" required data-bv-message="The user name is not valid" data-bv-notempty-message="The username is required and cannot be empty" pattern="^[a-zA-Z0-9]+$" data-bv-regexp-message="The username can only consist of alphabetical, number">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="Password">Password</label>
+						<div class="col-sm-6">
+							<input type="password" class="form-control" id="Password" name="Password" placeholder="" required data-bv-notempty-message="The password is required and cannot be empty">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12 text-center">
+							<button type="submit" class="btn btn-default">Login</button>
+						</div>
+					</div>
+					@Html.AntiForgeryToken()
+					@Html.Hidden("ReturnUrl")
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#login-form').bootstrapValidator();
+	});
+</script>

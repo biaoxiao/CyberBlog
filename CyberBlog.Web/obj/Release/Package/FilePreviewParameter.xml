@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="CyberBlog" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Dev\\CyberBlog\\CyberBlog\.Web\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Dev\\CyberBlog\\CyberBlog\.Web\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="BlogEntity-Web.config Connection String" description="BlogEntity Connection String used in web.config by the application to access the database." value="data source=m0puz7it15.database.windows.net,1433;initial catalog=CyberBlog;persist security info=True;user id=cyber;password=Biao19730902;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Dev\\CyberBlog\\CyberBlog\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BlogEntity']/@connectionString" />
+  </parameter>
+</parameters>

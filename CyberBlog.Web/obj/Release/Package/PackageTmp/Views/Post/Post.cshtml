@@ -1,0 +1,57 @@
+﻿@model CyberBlog.ViewModel.PostViewModel
+@using CyberBlog.BlogHelper
+
+@{
+	Layout = "~/Views/Shared/_PostLayout.cshtml";
+}
+@section Styles {
+	<link href="@Url.Content("~/Content/social-likes_birman.css")" rel="stylesheet" type="text/css" />
+}
+<article class="row">
+	<div class="col-md-12">
+		<div class="blog-item-wrap">
+			<div class="post-inner-content">
+				<header class="page-header">
+					<h3 class="entry-title">
+						@Model.Title
+					</h3>
+					<div class="entry-meta">
+						<ul>
+							<li><i class="fa fa-calendar"></i> @Model.PostedDate</li>
+							<li><i class="fa fa-user"></i> @Model.Author</li>
+							<li><a href="@Url.Action("Category", "Post", new { category = Model.CategoryUrlSlug })"><i class="fa fa-folder-open-o"></i> @Model.Category</a></li>
+						</ul>
+					</div>
+				</header>
+				<div class="entry-content">
+					@Html.Raw(Model.FullDesc)
+				</div>
+			</div>
+			<div class="clearfix">
+				<h5>Share this:</h5>
+				@Html.Partial("_ShareThis")
+			</div>
+			
+			<div class="post-tags-nav">
+				<ul class="list-unstyled list-inline">
+					@foreach (var tag in Model.Tags)
+					{
+						<li>@Html.ActionLink(tag.Tag, "Tag", "Post", new {tag=tag.UrlSlug },null)</li>
+					}
+				</ul>
+			</div>
+			<div id="disqus_thread"></div>
+			@Html.Partial("_Disqus")
+		</div>
+	</div>
+</article>
+<script>
+	$(document).ready(function () {
+		$(".entry-content img").addClass("img-responsive");
+		
+	});
+</script>
+@section Scripts{
+	<script src="@Url.Content("~/Scripts/social-likes.min.js")"></script>
+}
+

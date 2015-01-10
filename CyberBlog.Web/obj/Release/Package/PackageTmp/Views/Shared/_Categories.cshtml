@@ -1,0 +1,13 @@
+﻿@model IEnumerable<CyberBlog.ViewModel.CategoryViewModel>
+<h4 class="side-bar">Categories</h4>
+<ul>
+	@if (Model.Count() > 0)
+	{
+		foreach (var item in Model)
+		{
+			<li>
+				<a href="/category/@item.UrlSlug">@item.Category</a><span class="badge pull-right">@item.Count</span>
+			</li>
+		}
+	}
+</ul>

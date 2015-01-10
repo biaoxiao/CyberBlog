@@ -1,0 +1,42 @@
+﻿@model List<CyberBlog.ViewModel.TagViewModel>
+
+@{
+    ViewBag.Title = "Tags ";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="tab-pane active" id="tab-tag">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				<ul class="list-group">
+					@foreach (var tag in Model)
+					{
+						<li class="list-group-item" id="@tag.TagId">@tag.Tag</li>
+					}
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<form id="frm-tag" onsubmit="return false;" action="" method="post">
+					<div class="form-group">
+						<label for="input-tag" style="font-weight:normal;">Tag Name</label>
+						<input type="text" class="form-control" id="input-tag" placeholder="" required maxlength="50">
+					</div>
+					<button id="btnUpdate" type="submit" name="update" class="btn btn-sm btn-success">Update</button>
+					<button id="btnNew" type="submit" name="new" class="btn btn-sm btn-info">New</button>
+					<button id="btnDelete" type="button" name="delete" class="btn btn-sm btn-danger">Delete</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var urlDelTag = '@Url.Action("DeleteTag", "Admin")';
+	var urlUpdateTag = '@Url.Action("UpdateTag", "Admin")';
+	var urlNewTag = '@Url.Action("NewTag", "Admin")';
+</script>
+
+@section Scripts{
+	<script src="@Url.Content("~/ViewScripts/Admin/tag.js")"></script>
+}

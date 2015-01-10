@@ -1,0 +1,40 @@
+﻿@model List<CyberBlog.ViewModel.CategoryViewModel>
+@{
+    ViewBag.Title = "Categories - ";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="tab-pane active" id="tab-category">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				<ul class="list-group">
+					@foreach (var category in Model)
+					{
+						<li class="list-group-item" id="@category.CategoryId">@category.Category</li>
+					}
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<form id="frm-category" onsubmit="return false;" action="" method="post">
+					<div class="form-group">
+						<label for="input-category" style="font-weight:normal;">Category Name</label>
+						<input type="text" class="form-control" id="input-category" placeholder="" required maxlength="50">
+					</div>
+					<button id="btnUpdate" type="submit" name="update" class="btn btn-sm btn-success">Update</button>
+					<button id="btnNew" type="submit" name="new" class="btn btn-sm btn-info">New</button>
+					<button id="btnDelete" type="button" name="delete" class="btn btn-sm btn-danger">Delete</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var urlDelCategory = '@Url.Action("DeleteCategory", "Admin")';
+	var urlUpdateCategory = '@Url.Action("UpdateCategory", "Admin")';
+	var urlNewCategory = '@Url.Action("NewCategory", "Admin")';
+</script>
+
+@section Scripts{
+	<script src="@Url.Content("~/ViewScripts/Admin/category.js")"></script>
+}

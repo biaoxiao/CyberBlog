@@ -1,0 +1,29 @@
+﻿@{
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@*<link href="~/Scripts/DataTables-1.10.4/css/dataTables.bootstrap.css" rel="stylesheet" />
+<link href="~/Scripts/Summernote/summernote.css" rel="stylesheet" />
+<link href="~/Scripts/Bootstrap-Tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />*@
+@Styles.Render("~/Content/admin-css")
+<div class="row">
+	<div class="col-sm-12">
+		<!-- Nav tabs -->
+		<ul id="admin-tabs" class="nav nav-tabs">
+			<li id="list" class="active"><a href='@Url.Action("List", "Admin")'>List</a></li>
+			<li id="write"><a href="@Url.Action("Write","Admin")">Write</a></li>
+			<li id="category"><a href="@Url.Action("Category", "Admin")">Categories</a></li>
+			<li id="tag"><a href="@Url.Action("Tag","Admin")">Tags</a></li>
+		</ul>
+		<!-- Tab panes -->
+		<div class="tab-content">
+			@RenderBody()
+		</div>
+	</div>
+</div>
+@Scripts.Render("~/bundles/admin-js")
+@*<script src="~/Scripts/DataTables-1.10.4/js/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables-1.10.4/js/dataTables.bootstrap.js"></script>
+<script src="~/Scripts/Summernote/summernote.min.js"></script>
+<script src="~/Scripts/bootstrap3-typeahead.min.js"></script>
+<script src="~/Scripts/Bootstrap-Tagsinput/bootstrap-tagsinput.min.js"></script>*@
+@RenderSection("Scripts", required: false)

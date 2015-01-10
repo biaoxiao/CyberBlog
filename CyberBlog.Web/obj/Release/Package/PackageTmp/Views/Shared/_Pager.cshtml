@@ -1,0 +1,101 @@
+﻿@model CyberBlog.ViewModel.PostsListViewModel
+@using CyberBlog.BlogHelper
+
+@{
+	int totalPosts=0;
+	int currentPage=0;
+	string url_pre,url_next;
+	string action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+	totalPosts = Model.TotalPosts;
+	int pageSize =Helper.GetAppSettings().PageSize;
+	
+	switch (action)
+	{
+		case"postslist":
+			if (ViewContext.RouteData.Values["pageNo"] != null)
+			{
+				currentPage = ViewContext.RouteData.Values["pageNo"].ToString() != null ? int.Parse(ViewContext.RouteData.Values["pageNo"].ToString()) : 1;
+			}
+			else
+			{
+				currentPage = 1;
+			}
+			break;
+		case "category":
+			if (ViewContext.RouteData.Values["catPageNo"] != null)
+			{
+				currentPage = ViewContext.RouteData.Values["catPageNo"].ToString() != null ? int.Parse(ViewContext.RouteData.Values["catPageNo"].ToString()) : 1;
+			}
+			else
+			{
+				currentPage = 1;
+			}
+			break;
+		case "tag":
+			if (ViewContext.RouteData.Values["tagPageNo"] != null)
+			{
+				currentPage = ViewContext.RouteData.Values["tagPageNo"].ToString() != null ? int.Parse(ViewContext.RouteData.Values["tagPageNo"].ToString()) : 1;
+			}
+			else
+			{
+				currentPage = 1;
+			}
+			break;
+		case "search":
+			if (ViewContext.RouteData.Values["searchPageNo"] != null)
+			{
+				currentPage = ViewContext.RouteData.Values["searchPageNo"].ToString() != null ? int.Parse(ViewContext.RouteData.Values["searchPageNo"].ToString()) : 1;
+			}
+			else
+			{
+				currentPage = 1;
+			}
+			break;
+		
+	}
+	
+	//if (ViewContext.RouteData.Values["pageNo"] != null)
+	//{
+	//	currentPage = ViewContext.RouteData.Values["pageNo"].ToString() != null ? int.Parse(ViewContext.RouteData.Values["pageNo"].ToString()) : 1;
+	//}
+	//else
+	//{
+	//	currentPage = 1;
+	//}
+	
+	
+	var totalPages = Math.Ceiling((double)totalPosts / pageSize);
+}
+@if (currentPage > 0 || currentPage <= totalPages)
+{
+	var p = string.Format("{0}", currentPage - 1);
+	var n = string.Format("{0}", currentPage + 1);
+
+	switch (action)
+	{
+		case"tag":
+			url_pre = Url.Action("tag", "Post", new { tagPageNo = p });
+			url_next = Url.Action("tag", "Post", new { tagPageNo = n });
+			break;
+		case"category":
+			url_pre = Url.Action("category", "Post", new { catPageNo = p });
+			url_next = Url.Action("category", "Post", new { catPageNo = n });
+			break;
+		case"search":
+			url_pre = Url.Action("search", "Post", new { term = String.Format("{0}", ViewContext.RouteData.Values["term"]), searchPageNo = p });
+			url_next = Url.Action("search", "Post", new { term = String.Format("{0}", ViewContext.RouteData.Values["term"]), searchPageNo = n });
+			break;
+		default:
+			url_pre = Url.Action("postslist", "Post", new { pageNo = p });
+			url_next = Url.Action("postslist", "Post", new { pageNo = n });
+			break;
+	}
+	<div class="nav-link row">
+		<div class="col-sm-5">
+			<a href="@url_pre" title="previous" class="btn btn-default pull-left" style="visibility:@(currentPage > 1 ? "visible" : "collapse")"><i class="fa fa-angle-left"></i> Previous</a>
+		</div>
+		<div class="col-sm-6 col-sm-offset-1">
+			<a href="@url_next" title="Next" class="btn btn-default pull-right" style="visibility:@(currentPage < totalPages ? "visible" : "collapse")">Next <i class="fa fa-angle-right"></i></a>
+		</div>
+	</div>
+}

@@ -1,0 +1,374 @@
+﻿@{
+	ViewBag.Title = "My Portfolio - ";
+}
+@section Styles{
+<link href="~/Scripts/owl-carousel/owl.carousel.css" rel="stylesheet" />
+<link href="~/Scripts/owl-carousel/owl.theme.css" rel="stylesheet" />
+<link href="~/Scripts/owl-carousel/owl.transitions.css" rel="stylesheet" />
+<link href="~/Scripts/Swiper/idangerous.swiper.css" rel="stylesheet" />
+}
+<div class="row">
+	<div class="col-sm-12">
+		<p>My portfolio highlights just some of the projects I've completed. I have worked on hundreds of programming projects over the years, ranging from enterprise-level development to small programming jobs.</p>		
+	</div>
+</div>
+<h2 class="section-title">
+	<span><i class="fa fa-rocket"></i>PORTFOLIO</span>
+</h2>
+<div class="row">
+	<div id="portfolio" class="carousel-wrap">
+		<div id="owl-demo" class="owl-carousel owl-theme">
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-3">
+						<img class="img-responsive" src="~/Images/portfolio/Alpine.png" />
+					</div>
+					<div class="col-sm-5">
+						<h4><u>Alpine Explorer</u></h4>
+						<p class="small">Developed a mobile web application for Great Alpine Valleys Explorer project, optimized for iPhone. It is an interactive itinerary planer which will let the tourists know the regions activities, sites and businesses.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">Mobile web app, touch-screen kiosk application.</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('alpine')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-7">
+						<img class="img-responsive" src="~/Images/portfolio/CyberBlog.png" />
+					</div>
+					<div class="col-sm-5">
+						<h4><u>CyberBlog</u></h4>
+						<p class="small">CyberBlog is a flexible, lightweight, open source blog engine built with ASP.NET MVC 5, C#, jQuery, Razor view engine, CSS3, Bootstrap 3 and HTML5.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">Responsive design, Entity Framework.</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('cyberblog')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-7">
+						<img class="img-responsive" src="~/Images/portfolio/BMS.jpg" />
+					</div>
+					<div class="col-sm-5">
+						<h4><u>Business Documents Management System</u></h4>
+						<p class="small">Architected and developed Business Documents Management System (BDMS) for Toll and PrixCar, an online services and easy using system which allows users to submit, approve, preview, full-text search and track all business documents based on the web browser.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">ASP.NET web application, Full-Text Search Engine, Flash Document, and Windows Indexing Services.</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('bms')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+			@*<div class="item">
+				<div class="carousel">
+					<div class="col-sm-5">
+						<img class="img-responsive" src="~/Images/portfolio/JBlog.jpg"/>
+					</div>
+					<div class="col-sm-5">
+						<h4><u>JABA Blog Engine</u></h4>
+						<p class="small">A flexible blog engine can be attached to JABA client's website.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">Responsive design, ASP.NET MVC 4.</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('jblog')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>*@
+
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-7">
+						<img class="img-responsive" src="~/Images/portfolio/SAFC.jpg" />
+					</div>
+					<div class="col-sm-5">
+						<h4><u>SAFC Website</u></h4>
+						<p class="small">South Adelaide Football Culb new website.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">Responsive design, MVC 4 and CMS.</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('safc')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-7">
+						<img class="img-responsive" src="~/Images/portfolio/NAFC.jpg" />
+					</div>
+					<div class="col-sm-5">
+						<h4><u>NAFC Website</u></h4>
+						<p class="small">North Adelaide Football Culb new website.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">Responsive design, MVC 4 and CMS.</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('nafc')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-7">
+						<img class="img-responsive" src="~/Images/portfolio/PM.jpg"/>
+					</div>
+					<div class="col-sm-5">
+						<h4><u>Preventative Maintenance System</u></h4>
+						<p class="small">Designed and implemented Preventative Maintenance System. PM provides a single platform to easily plan, organize and manage all PM work including building PM Master Plans, linking tasks to equipment and scheduling PM work order generation.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">Back-end, Front-end based on MVC 3, Entity Freamwork, WCF, SSRS and SQL Server.</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('pm')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-7">
+						<img class="img-responsive" src="~/Images/portfolio/Visitor.jpg"/>
+					</div>
+					<div class="col-sm-5">
+						<h4><u>Visitor Induction</u></h4>
+						<p class="small">Designed and implemented a touch-screen visitor induction solution for Amcor, Rapid Global, and Christie Downs Primary School. The solution provides visitor induction and management with an intuitive system that records, tracks and reports on all visitors across all sites of company.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">WPF touched-screen application, back-end based on ASP.NET MVC, Web Service and SQL Server.</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('visitor')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-7">
+						<img class="img-responsive" src="~/Images/portfolio/RedStack.jpg"/>
+					</div>
+					<div class="col-sm-5">
+						<h4><u>RedStack Website</u></h4>
+						<p class="small">Extended and enhanced Redstack website in ASP.NET, jQuery and responsive CSS.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">
+							Responsive design, MVC 4 and CMS.
+						</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('redstack')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-7">
+						<img class="img-responsive" src="~/Images/portfolio/MP.jpg"/>
+					</div>
+					<div class="col-sm-5">
+						<p><u>Mobile Profile</u></p>
+						<p class="small">Windows 8 app - Mobile Profile, an end-to-end sample collection solution delivers positive patient ID, produces labels and context sensitive help where it's needed most - when dealing with the patient.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">
+							Windows Metro App built with HTML5 and WinJS. Back-end based on ASP.NET MVC 4, Web API, Active Directory and SQL Server.
+						</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('mp')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="carousel">
+					<div class="col-sm-5">
+						<img class="img-responsive" src="~/Images/portfolio/KT3.jpg" />
+					</div>
+					<div class="col-sm-5">
+						<h4><u>KT3</u></h4>
+						<p class="small">Successfully delivered an ordering and invoicing solution for U Install It Kitchens (UIIK), an online order creation and tracking application with ability for the stores and resellers to order kitchen installation equipment through the Internet.</p>
+						<h4><u>Project Included</u></h4>
+						<p class="small">
+							Front-end, back-end web application, Reporting Service, SSIS, ASP.NET WebForms.
+						</p>
+						<a class="btn btn-success btn-sm pull-right" onclick="generator('kt3')">
+							<i class="fa fa-pencil-square-o"></i>  Details
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+<!-- Details Section -->
+<div id="details" class="row hidden">
+	<div id="details-col" class="col-sm-8 col-sm-offset-2" style="text-align:center;">
+		<h4 id="prj" style="cursor:pointer" title="Go Back" onclick="goBack()"><u>Project</u><button class="btn btn-default btn-xs pull-right" onclick="goBack()">Back</button></h4>
+		<div class="swiper-container">
+			<div id="owl-details" class="swiper-wrapper">
+
+			</div>
+			<div class="pagination"></div>
+		</div>
+	</div>
+</div>
+
+@section Scripts{
+<script src="~/Scripts/owl-carousel/owl.carousel.min.js"></script>
+<script src="~/Scripts/Swiper/idangerous.swiper.min.js"></script>
+<script>
+	var portfolio_data, owl;
+	portfolio_data = { "Alpines": [{ "Img": "Images/portfolio/Alpine1.png" }, { "Img": "Images/portfolio/Alpine2.png" }, { "Img": "Images/portfolio/Alpine3.png" }, { "Img": "Images/portfolio/Alpine4.png" }, { "Img": "Images/portfolio/Alpine5.png" }, { "Img": "Images/portfolio/Alpine6.jpg" }, { "Img": "Images/portfolio/Alpine7.jpg" }, { "Img": "Images/portfolio/Alpine8.jpg" }, { "Img": "Images/portfolio/Alpine9.jpg" }], "BMSs": [{ "Img": "Images/portfolio/BMS01.jpg" }, { "Img": "Images/portfolio/BMS02.jpg" }, { "Img": "Images/portfolio/BMS03.jpg" }, { "Img": "Images/portfolio/BMS04.jpg" }, { "Img": "Images/portfolio/BMS05.jpg" }, { "Img": "Images/portfolio/BMS06.jpg" }, { "Img": "Images/portfolio/BMS07.jpg" }, { "Img": "Images/portfolio/BMS08.jpg" }, { "Img": "Images/portfolio/BMS10.jpg" }, { "Img": "Images/portfolio/BMS11.jpg" }, { "Img": "Images/portfolio/BMS12.jpg" }, { "Img": "Images/portfolio/BMS13.jpg" }], "JBlogs": [{ "Img": "Images/portfolio/JBlog_01.jpg" }, { "Img": "Images/portfolio/JBlog_02.jpg" }, { "Img": "Images/portfolio/JBlog_03.jpg" }, { "Img": "Images/portfolio/JBlog_04.jpg" }, { "Img": "Images/portfolio/JBlog_05.jpg" }], "KT3s": [{ "Img": "Images/portfolio/KT3-1.jpg" }, { "Img": "Images/portfolio/KT3-2.jpg" }, { "Img": "Images/portfolio/KT3-3.jpg" }, { "Img": "Images/portfolio/KT3-4.jpg" }, { "Img": "Images/portfolio/KT3-5.jpg" }, { "Img": "Images/portfolio/KT3-6.jpg" }, { "Img": "Images/portfolio/KT3-7.jpg" }], "MPs": [{ "Img": "Images/portfolio/MP01.jpg" }, { "Img": "Images/portfolio/MP02.jpg" }, { "Img": "Images/portfolio/MP03.jpg" }, { "Img": "Images/portfolio/MP04.jpg" }], "NAFCs": [{ "Img": "Images/portfolio/NAFC01.jpg" }, { "Img": "Images/portfolio/NAFC02.jpg" }, { "Img": "Images/portfolio/NAFC03.jpg" }], "PMs": [{ "Img": "Images/portfolio/PM01.jpg" }, { "Img": "Images/portfolio/PM03.jpg" }, { "Img": "Images/portfolio/PM04.jpg" }, { "Img": "Images/portfolio/PM05.jpg" }, { "Img": "Images/portfolio/PM06.jpg" }, { "Img": "Images/portfolio/PM07.jpg" }, { "Img": "Images/portfolio/PM08.jpg" }, { "Img": "Images/portfolio/PM09.jpg" }], "RedStacks": [{ "Img": "Images/portfolio/RedStack01.jpg" }, { "Img": "Images/portfolio/RedStack02.jpg" }, { "Img": "Images/portfolio/RedStack03.jpg" }], "SAFCs": [{ "Img": "Images/portfolio/SAFC01.jpg" }, { "Img": "Images/portfolio/SAFC02.jpg" }, { "Img": "Images/portfolio/SAFC03.jpg" }], "Visitors": [{ "Img": "Images/portfolio/Visitor01.jpg" }, { "Img": "Images/portfolio/Visitor02.jpg" }, { "Img": "Images/portfolio/Visitor03.jpg" }, { "Img": "Images/portfolio/Visitor04.jpg" }, { "Img": "Images/portfolio/Visitor05.jpg" }, { "Img": "Images/portfolio/Visitor06.jpg" }, { "Img": "Images/portfolio/Visitor07.jpg" }], "CyberBlogs": [{ "Img": "Images/portfolio/CyberBlog01.png" }, { "Img": "Images/portfolio/CyberBlog02.png" }, { "Img": "Images/portfolio/CyberBlog03.png" }, { "Img": "Images/portfolio/CyberBlog04.png" }, { "Img": "Images/portfolio/CyberBlog05.png" }, { "Img": "Images/portfolio/CyberBlog06.png" }, { "Img": "Images/portfolio/CyberBlog07.png" }] };
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.pagination',
+		loop: true,
+		mode: 'horizontal',
+		mousewheelControl:true,
+		grabCursor: true,
+		paginationClickable: true
+	});
+	$(document).ready(function () {
+			
+		$("#owl-demo").owlCarousel({
+			items: 1,
+			itemsMobile: [479, 1],
+			navigation: true,
+			navigationText: ["Prev","Next"],
+			rewindNav: true,
+			scrollPerPage: true,
+			pagination: true,
+			paginationNumbers: false,
+			slideSpeed: 500,
+			paginationSpeed: 500,
+			singleItem: true,
+			autoPlay: false,
+			stopOnHover: true,
+			lazyLoad: true,
+			autoHeight: true
+		});
+	});
+
+	function reinitSwiper(swiper) {
+		setTimeout(function () { swiper.reInit();swiper.swipeTo(0); }, 500);
+	}
+
+	function goBack(){
+		$('#details').addClass('hidden');
+		$('#portfolio').removeClass('hidden');
+	}
+
+	function generator(project) {
+		mySwiper.removeAllSlides();
+		switch (project) {
+			case 'alpine':
+				for (var i in portfolio_data["Alpines"]) {
+					var img = portfolio_data["Alpines"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('Alpine Explorer');
+				$('#details-col').removeClass('col-sm-8 col-sm-offset-2').addClass('col-sm-4 col-sm-offset-4');
+				break
+			case 'bms':
+				for (var i in portfolio_data["BMSs"]) {
+					var img = portfolio_data["BMSs"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('Business Documents Management System');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+
+			case 'cyberblog':
+				for (var i in portfolio_data["CyberBlogs"]) {
+					var img = portfolio_data["CyberBlogs"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('CyberBlog');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+
+			case 'jblog':
+				for (var i in portfolio_data["JBlogs"]) {
+					var img = portfolio_data["JBlogs"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('JABA Blog Engine');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+			case 'kt3':
+				for (var i in portfolio_data["KT3s"]) {
+					var img = portfolio_data["KT3s"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('KT3');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+			case 'mp':
+				for (var i in portfolio_data["MPs"]) {
+					var img = portfolio_data["MPs"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('Mobile Profile');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+			case 'nafc':
+				for (var i in portfolio_data["NAFCs"]) {
+					var img = portfolio_data["NAFCs"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('NAFC Website');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+			case 'pm':
+				for (var i in portfolio_data["PMs"]) {
+					var img = portfolio_data["PMs"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('Preventative Management System');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+			case 'redstack':
+				for (var i in portfolio_data["RedStacks"]) {
+					var img = portfolio_data["RedStacks"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('RedStack Website');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+			case 'safc':
+				for (var i in portfolio_data["SAFCs"]) {
+					var img = portfolio_data["SAFCs"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('SAFC Website');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+			case 'visitor':
+				for (var i in portfolio_data["Visitors"]) {
+					var img = portfolio_data["Visitors"][i].Img;
+					mySwiper.appendSlide("<img class='img-responsive' src='" + img + "'>");
+				}
+				$('#prj u').text('Visitor Induction');
+				$('#details-col').removeClass('col-sm-4 col-sm-offset-4').addClass(('col-sm-8 col-sm-offset-2'));
+				break;
+		}
+		reinitSwiper(mySwiper);
+		$('#portfolio').addClass('hidden');
+		$('#details').removeClass('hidden');
+	}
+</script>
+}

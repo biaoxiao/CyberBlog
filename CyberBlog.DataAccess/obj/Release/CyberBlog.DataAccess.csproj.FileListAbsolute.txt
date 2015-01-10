@@ -1,0 +1,16 @@
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\CyberBlog.DataAccess.dll.config
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\CyberBlog.DataAccess.dll
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\CyberBlog.DataAccess.pdb
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\CyberBlog.BlogEntity.dll
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\CyberBlog.Helper.dll
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\CyberBlog.ViewModel.dll
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\EntityFramework.dll
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\EntityFramework.SqlServer.dll
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\CyberBlog.BlogEntity.pdb
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\CyberBlog.Helper.pdb
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\CyberBlog.ViewModel.pdb
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\EntityFramework.xml
+E:\Dev\CyberBlog\CyberBlog.DataAccess\bin\Release\EntityFramework.SqlServer.xml
+E:\Dev\CyberBlog\CyberBlog.DataAccess\obj\Release\CyberBlog.DataAccess.csprojResolveAssemblyReference.cache
+E:\Dev\CyberBlog\CyberBlog.DataAccess\obj\Release\CyberBlog.DataAccess.dll
+E:\Dev\CyberBlog\CyberBlog.DataAccess\obj\Release\CyberBlog.DataAccess.pdb

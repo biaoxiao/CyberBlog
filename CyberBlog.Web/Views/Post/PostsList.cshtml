@@ -1,0 +1,72 @@
+﻿@model CyberBlog.ViewModel.PostsListViewModel
+@using CyberBlog.BlogHelper
+@{
+	
+	Layout = "~/Views/Shared/_PostLayout.cshtml";
+}
+@if (ViewBag.SubTitle != null)
+{
+	<h4 class="side-bar">@ViewBag.SubTitle</h4>
+}
+@if (Model.TotalPosts > 0)
+{
+	foreach (var item in Model.Posts)
+	{
+		<article class="row">
+			<div class="col-md-12">
+				<div class="blog-item-wrap">
+					<div class="post-inner-content">
+						<header class="page-header">
+							<h3 class="entry-title">
+								@Html.ActionLink(item.Title, "Post", "Post", new { year = item.PostedDate.ToString("yyyy"), month = item.PostedDate.ToString("MM"), title = item.UrlSlug }, null)
+							</h3>
+							<div class="entry-meta">
+								<ul>
+									<li><i class="fa fa-calendar"></i> @item.PostedDate.ToString("MMMM") @item.PostedDate.ToString("dd"), @item.PostedDate.ToString("yyyy")</li>
+									<li><i class="fa fa-user"></i> @item.Author</li>
+									<li><i class="fa fa-comment-o"></i> <a href="@Url.Action("Post", "Post", new { year = item.PostedDate.ToString("yyyy"), month = item.PostedDate.ToString("MM"), title = item.UrlSlug },"http")#disqus_thread"></a></li>
+								</ul>
+							</div>
+						</header>
+						<div class="entry-content">
+							@Html.Raw(item.ShortDesc)
+						</div>
+						<div>
+							<a class="btn btn-success btn-sm pull-right" href="@Url.Action("Post", "Post", new { year = item.PostedDate.ToString("yyyy"), month = item.PostedDate.ToString("MM"), title = item.UrlSlug })">
+								<i class="fa fa-pencil-square-o"></i>  Read More
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</article>
+	}
+
+}
+else
+{
+	<p>No posts found!</p>
+}
+
+@Html.Partial("_Pager",Model)
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$(".entry-content img").addClass("img-responsive");
+
+		
+
+	});
+	
+	/* * * DISQUS: CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = '@Helper.GetAppSettings().ShortName'; // required: replace example with your forum shortname
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function () {
+		var s = document.createElement('script'); s.async = true;
+		s.type = 'text/javascript';
+		s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
+</script>
