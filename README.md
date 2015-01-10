@@ -1,5 +1,4 @@
-# CyberBlog
-<<<<<<< HEAD
+
 An open source ASP.NET MVC 5 blog engine
 
 CyberBlog is a flexible, lightweight, open source blog engine built with ASP.NET MVC 5, C#, Entity Framework 6, jQuery, Razor view engine, CSS3, Bootstrap 3 and HTML5.
@@ -10,5 +9,5 @@ Features
 * Responsive design optimised for modern desktop, tablets and smartphones
 * Easy for social sharing
 * User-friendly URL pattern, optimised for SEO
-=======
->>>>>>> a983157a86919f4666c428538c4d9a9bc021d4f8
+
+Check it out the demo website: http://cyberblog.azurewebsites.net/
