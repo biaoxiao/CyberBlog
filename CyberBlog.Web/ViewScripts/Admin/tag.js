@@ -46,12 +46,14 @@ function newTag() {
 			var url = urlNewTag;
 			var post = { Tag: $('#input-tag').val() };
 			$.ajax({
+				beforeSend: showLoading(),
 				url: url,
 				contentType: "application/json",
 				type: 'POST',
 				dataType: 'text',
 				data: JSON.stringify(post),
 				success: function (id) {
+					closeLoading();
 					if (parseInt(id) > 0) {
 						$('#tab-tag ul').append("<li class='list-group-item' id='" + id + "'>" + $('#input-tag').val() + "</li>");
 						$('#input-tag').val('');
@@ -62,6 +64,7 @@ function newTag() {
 					}
 				},
 				error: function () {
+					closeLoading();
 					alert("There was an error creating the new tag.");
 				}
 			});
@@ -79,12 +82,14 @@ function delTag() {
 		var url = urlDelTag;
 		var post = { TagId: tagId };
 		$.ajax({
+			beforeSend: showLoading(),
 			url: url,
 			contentType: "application/json",
 			type: 'DELETE',
 			dataType: 'json',
 			data: JSON.stringify(post),
 			success: function (resp) {
+				closeLoading();
 				if (resp) {
 					$("#tab-tag li[id='" + tagId + "']").remove();
 					$('#input-tag').val('');
@@ -96,6 +101,7 @@ function delTag() {
 				}
 			},
 			error: function () {
+				closeLoading();
 				alert("There was an error deleting the tag.");
 			}
 		});
@@ -112,12 +118,14 @@ function updateTag() {
 		var url = urlUpdateTag;
 		var post = { Tag: $('#input-tag').val(), TagId: tagId };
 		$.ajax({
+			beforeSend: showLoading(),
 			url: url,
 			contentType: "application/json",
 			type: 'PUT',
 			dataType: 'json',
 			data: JSON.stringify(post),
 			success: function (resp) {
+				closeLoading();
 				if (resp) {
 					$("#tab-tag li[id='" + tagId + "']").text($('#input-tag').val());
 					$('#input-tag').val('');
@@ -129,6 +137,7 @@ function updateTag() {
 				}
 			},
 			error: function () {
+				closeLoading();
 				alert("There was an error updating the tag.");
 			}
 		});

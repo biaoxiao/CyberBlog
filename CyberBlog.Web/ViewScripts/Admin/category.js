@@ -8,9 +8,9 @@ var onActionEvent = function (e) {
 		case 'new':
 			newCategory(); break;
 		case 'delete':
-			delCategory();break
+			delCategory(); break
 	}
-	
+
 }
 
 $('#btnUpdate').click({ action: 'update' }, onActionEvent);
@@ -19,7 +19,7 @@ $('#btnNew').click({ action: 'new' }, onActionEvent);
 
 var categoryId;
 
-$('#tab-category ul').on('click','li', function () {
+$('#tab-category ul').on('click', 'li', function () {
 	$('#tab-category ul li').removeClass('list-group-item-success');
 	$(this).addClass('list-group-item-success');
 	categoryId = $(this).attr('id');
@@ -35,12 +35,14 @@ function delCategory() {
 		var url = urlDelCategory;
 		var post = { CategoryId: categoryId };
 		$.ajax({
+			beforeSend: showLoading(),
 			url: url,
 			contentType: "application/json",
 			type: 'DELETE',
 			dataType: 'json',
 			data: JSON.stringify(post),
 			success: function (resp) {
+				closeLoading();
 				if (resp) {
 					$("#tab-category li[id='" + categoryId + "']").remove();
 					$('#input-category').val('');
@@ -52,6 +54,7 @@ function delCategory() {
 				}
 			},
 			error: function () {
+				closeLoading();
 				alert("There was an error deleting the category.");
 			}
 		});
@@ -60,19 +63,21 @@ function delCategory() {
 }
 
 function updateCategory() {
-	if ($('#input-category').val().length == 0 || categoryId==null) {
+	if ($('#input-category').val().length == 0 || categoryId == null) {
 		return false;
 	}
 	else {
 		var url = urlUpdateCategory;
-		var post = { Category: $('#input-category').val(),CategoryId: categoryId};
+		var post = { Category: $('#input-category').val(), CategoryId: categoryId };
 		$.ajax({
+			beforeSend: showLoading(),
 			url: url,
 			contentType: "application/json",
 			type: 'POST',
 			dataType: 'json',
 			data: JSON.stringify(post),
 			success: function (resp) {
+				closeLoading();
 				if (resp) {
 					$("#tab-category li[id='" + categoryId + "']").text($('#input-category').val());
 					$('#input-category').val('');
@@ -84,6 +89,7 @@ function updateCategory() {
 				}
 			},
 			error: function () {
+				closeLoading();
 				alert("There was an error updating the category.");
 			}
 		});
@@ -110,12 +116,14 @@ function newCategory() {
 			var url = urlNewCategory;
 			var post = { Category: $('#input-category').val() };
 			$.ajax({
+				beforeSend: showLoading(),
 				url: url,
 				contentType: "application/json",
 				type: 'POST',
 				dataType: 'text',
 				data: JSON.stringify(post),
 				success: function (id) {
+					closeLoading();
 					if (parseInt(id) > 0) {
 						$('#tab-category ul').append("<li class='list-group-item' id='" + id + "'>" + $('#input-category').val() + "</li>");
 						$('#input-category').val('');
@@ -126,6 +134,7 @@ function newCategory() {
 					}
 				},
 				error: function () {
+					closeLoading();
 					alert("There was an error creating the new category.");
 				}
 			});
